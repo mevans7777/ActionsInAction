@@ -19,4 +19,11 @@ jobs:
         run: |
           echo "The repository ${{ github.repository }}  contains the following files:"
           tree
-          
+  
+      - name: Generatr markdown job summary
+        run:  |
+          echo "## Test results" >> $GITHUB_STEP_SUMMARY
+          echo " **Test Name** | **Result** |" >> $GITHUB_STEP_SUMMARY
+          echo " -- | -- |" >> $GITHUB_STEP_SUMMARY
+          echo " check 1 | :white_check_mark: |" >> $GITHUB_STEP_SUMMARY
+          echo " check 2 | :x: |" >> $GITHUB_STEP_SUMMARY
