@@ -3,12 +3,14 @@ on:
   pull_request:
     types:
       - opened
-
+      - reopened
+      - synchronize
+      
 jobs: 
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: pullRequest
+      name: web-preview-${{ github.event.number }}
 
     steps:
       - name: Checkout
