@@ -1,0 +1,20 @@
+name: Deployment PR
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: pullRequest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+  
+      - name:  Deployment DEV
+        run:  |
+          echo "Deploying to dev" 
+        
