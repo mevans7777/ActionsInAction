@@ -6,7 +6,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: development
+      name: development2
 
     steps:
       - name: Checkout
