@@ -1,0 +1,22 @@
+name: Deployment PR
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: web-preview-${{ github.event.number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+  
+      - name:  Deployment DEV
+        run:  |
+          echo "Deploying to dev" 
+        
